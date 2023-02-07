@@ -149,7 +149,7 @@ function checkcheckbox() {
     }
 }
 
-// FORM FIELDS EVENTS
+// Form des champs
 function BuildValidation(element, method, event) {
     element.addEventListener(event, method);
 }
@@ -173,7 +173,10 @@ function CheckValidation() {
     checkcheckbox()
 }
 
-
+/**
+ * 
+ * @returns {boolean}
+ */
 function Validation() {
     if (checkfirstname() === true &&
         checklastname() === true &&
@@ -184,6 +187,13 @@ function Validation() {
         checkcheckbox() === true) {
         return true;
     }
+    checkfirstname()
+    checklastname()
+    checkemail()
+    checkbirthdate()
+    checkquantity()
+    checklocations()
+    checkcheckbox()
     return false;
 }
 
@@ -193,7 +203,7 @@ form.addEventListener('submit', function (e) {
         ModalSubmit();
         document.querySelector('form').reset();
     } else {
-      CheckValidation();
+      Validation();
     }
 });
 
@@ -208,3 +218,18 @@ function closeSubmit() {
 
 closeModalConfirmation[0].addEventListener('click', closeSubmit);
 closeBtnConfirmation[0].addEventListener('click', closeSubmit);
+
+
+
+
+// decouverte des commentaires js
+/**
+ * 
+ * @param {String} a 
+ * @param {Number} b 
+ */
+function test (a,b){
+
+    
+
+}
