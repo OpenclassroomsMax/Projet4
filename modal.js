@@ -38,46 +38,47 @@ let regExTypeEmail = new RegExp(
   '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$'
 );
 
-// launch modal event
+// evenement ouverture de la modale
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
+// ouverture de la modale
 function launchModal() {
   modalbg.style.display = "block";
 }
 
 
-// close modal
+// evenement fermeture de la modale
 spanclose.forEach((btnclose) => btnclose.addEventListener("click", closeModal));
 
+//fermeture de la modale
 function closeModal(){
   modalbg.style.display ="none";
 }
 
 // Verification firstname
 function checkfirstname() {
-    if (first.value.trim() === '' || !firstName.value.match(regExTypeText)) {
+    if (firstName.value.trim() === '' || !firstName.value.match(regExTypeText)) {
         firstName.parentElement.setAttribute('data-error-visible', 'true');
         firstName.style.border = '2px solid #e54858';
         return false;
     }
     else{
-    first.parentElement.setAttribute('data-error-visible', 'false');
-    first.style.border = '';
+    firstName.parentElement.setAttribute('data-error-visible', 'false');
+    firstName.style.border = '';
     return true;
     }
 }
 
 // Verification lastname
 function checklastname() {
-    if (last.value.trim() === "" || !lastName.value.match(regExTypeText)) {
+    if (lastName.value.trim() === "" || !lastName.value.match(regExTypeText)) {
         lastName.parentElement.setAttribute('data-error-visible', 'true');
         lastName.style.border = '2px solid #e54858';
         return false;
     }
     else{
-    last.parentElement.setAttribute('data-error-visible', 'false');
-    last.style.border = '';
+    lastName.parentElement.setAttribute('data-error-visible', 'false');
+    lastName.style.border = '';
     return true;
     }
 }
@@ -177,6 +178,8 @@ function CheckValidation() {
  * 
  * @returns {boolean}
  */
+
+
 function Validation() {
     if (checkfirstname() === true &&
         checklastname() === true &&
